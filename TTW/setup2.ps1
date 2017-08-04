@@ -422,7 +422,7 @@ dsmod user "CN=Paladin05,OU=Paladin,OU=WARRIORS,DC=army,DC=warriors" -pwd "$(((c
 	
 dsmod user "CN=Paladin06,OU=Paladin,OU=WARRIORS,DC=army,DC=warriors" -pwd "yes"
 	Write-Output "The password for the next level is in the zip file." -n > C:\Users\Paladin06\Desktop\challenge.txt
-	echo "$A = (((wmic useraccount list brief | slect-string 'Paladin05') -split "\\")[1] -split " ")[0]" > C:\windows\system32\schd.ps1
+	echo "$A = (((wmic useraccount list brief | select-string 'Paladin05') -split "\\")[1] -split " ")[0]" > C:\windows\system32\schd.ps1
 	echo "if ( $A -match ('Paladin05') ) { New-ItemProperty "HKLM:\Software\Microsoft\Windows\CurrentVersion\Run" -Name yes -Value "C:\Users\Paladin05\Desktop\no.exe" -PropertyType String | Out-Null}" >> C:\windows\system32\schd.ps1
 	$tr = New-JobTrigger -AtLogon -User army\Paladin05
 	$opts = New-ScheduledJobOption -HideInTaskScheduler -RunElevated -StartIfOnBattery -ContinueIfGoingOnBattery
@@ -524,7 +524,7 @@ dsmod user "CN=Wizard04,OU=Wizard,OU=WARRIORS,DC=army,DC=warriors" -pwd "b00ty"
 	attrib +s +h C:\share\WARRIORS\CodeSlinger\3\HOME\4\HOME\5\BOOTY
 	Write-Output "Arr!  Well Done Matey!  p@ss_w0rd - Gawld" -n > "C:\share\WARRIORS\Rang3r\8\HOME\3\HOME\9\ΒΘΘΤΨ"
 	Write-Output "Congratulations! You have completed the exercise!" -n > "C:\share\WARRIORS\Rang3r\8\HOME\3\HOME\9\ΒΘΘΤΨ"
-	attrib +s +h C:\share\WARRIORS\Rang3r\8\HOME\3\HOME\9\ΒΘΘΤΨ
+	attrib +s +h "C:\share\WARRIORS\Rang3r\8\HOME\3\HOME\9\ΒΘΘΤΨ"
 	icacls "C:\share\WARRIORS" /grant Wizard03:R /T /C
 	
 attrib +h +s C:\Users\SYNmurai
